@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
     func keyboardDidShow(notification: NSNotification) {
         let userInfo: NSDictionary = notification.userInfo!
         let keyboardSize = userInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue.size
-        let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 16, 0)
         mainScrollView.contentInset = contentInsets
         mainScrollView.scrollIndicatorInsets = contentInsets
         let bottomOffset = CGPoint(x: 0, y: mainScrollView.contentSize.height - mainScrollView.bounds.size.height + mainScrollView.contentInset.bottom)

@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				040D54AE1D4B56D6001250F4 /* AppDelegate.swift */,
+				040D54DE1D4B6600001250F4 /* MainViewController.swift */,
 				040D54B21D4B56D6001250F4 /* Main.storyboard */,
 				040D54B51D4B56D6001250F4 /* Assets.xcassets */,
 				040D54B71D4B56D6001250F4 /* LaunchScreen.storyboard */,
 				040D54BA1D4B56D6001250F4 /* Info.plist */,
-				040D54DE1D4B6600001250F4 /* MainViewController.swift */,
 			);
 			path = MobilizeProject;
 			sourceTree = "<group>";
