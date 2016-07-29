@@ -13,10 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var messageTextViewHeightLayoutConstraint: NSLayoutConstraint!
+    
+    var mediator: MainMediator!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let delegate = (self.navigationController as! MainNavigationController).mediator
+        self.mediator = MainMediator(uiDelegate: self, delegate: delegate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +31,12 @@ class MainViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    @IBAction func imageButtonDidTap(sender: AnyObject) {
+    }
+    
+    @IBAction func boldButtonDidTap(sender: AnyObject) {
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         registerKeyboardNotifications()
@@ -62,14 +71,8 @@ class MainViewController: UIViewController {
         mainScrollView.scrollIndicatorInsets = UIEdgeInsetsZero
     }
     
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension MainViewController: MainMediatorUIDelegate {
+    
 }
