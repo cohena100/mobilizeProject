@@ -53,6 +53,8 @@ class MainViewController: UIViewController {
         let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
         mainScrollView.contentInset = contentInsets
         mainScrollView.scrollIndicatorInsets = contentInsets
+        let bottomOffset = CGPoint(x: 0, y: mainScrollView.contentSize.height - mainScrollView.bounds.size.height + mainScrollView.contentInset.bottom)
+        mainScrollView.setContentOffset(bottomOffset, animated: true)
     }
     
     func keyboardWillHide(notification: NSNotification) {
