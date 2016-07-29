@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var messageTextViewHeightLayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +28,38 @@ class MainViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
+    }
+    
+    func registerKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo!
+        let keyboardSize = userInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue.size
+        let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        mainScrollView.contentInset = contentInsets
+        mainScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        mainScrollView.contentInset = UIEdgeInsetsZero
+        mainScrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
+    
     /*
     // MARK: - Navigation
 
