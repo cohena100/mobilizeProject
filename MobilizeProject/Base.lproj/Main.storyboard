@@ -20,7 +20,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfb-yt-IaK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9Y-sY-aH7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9Y-sY-aH7" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="697"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageTest" translatesAutoresizingMaskIntoConstraints="NO" id="1DC-Dl-L8O">
@@ -56,7 +56,7 @@
                                             <constraint firstItem="q1V-BA-HSO" firstAttribute="centerX" secondItem="T9Y-sY-aH7" secondAttribute="centerX" id="wbm-N1-ngR"/>
                                             <constraint firstAttribute="trailing" secondItem="KRt-TZ-Qc6" secondAttribute="trailing" id="y62-sV-iha"/>
                                             <constraint firstItem="KRt-TZ-Qc6" firstAttribute="top" secondItem="1DC-Dl-L8O" secondAttribute="bottom" constant="8" id="ybx-25-Ng1"/>
-                                            <constraint firstAttribute="bottom" secondItem="q1V-BA-HSO" secondAttribute="bottom" constant="8" id="z76-6g-FgZ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q1V-BA-HSO" secondAttribute="bottom" constant="8" id="z76-6g-FgZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
