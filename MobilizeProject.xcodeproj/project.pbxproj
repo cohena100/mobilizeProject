@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		040D54AF1D4B56D6001250F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54AE1D4B56D6001250F4 /* AppDelegate.swift */; };
-		040D54B11D4B56D6001250F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54B01D4B56D6001250F4 /* ViewController.swift */; };
 		040D54B41D4B56D6001250F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040D54B21D4B56D6001250F4 /* Main.storyboard */; };
 		040D54B61D4B56D6001250F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040D54B51D4B56D6001250F4 /* Assets.xcassets */; };
 		040D54B91D4B56D6001250F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040D54B71D4B56D6001250F4 /* LaunchScreen.storyboard */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		040D54AB1D4B56D6001250F4 /* MobilizeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilizeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		040D54AE1D4B56D6001250F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		040D54B01D4B56D6001250F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		040D54B31D4B56D6001250F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		040D54B51D4B56D6001250F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040D54B81D4B56D6001250F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				040D54AE1D4B56D6001250F4 /* AppDelegate.swift */,
-				040D54B01D4B56D6001250F4 /* ViewController.swift */,
 				040D54B21D4B56D6001250F4 /* Main.storyboard */,
 				040D54B51D4B56D6001250F4 /* Assets.xcassets */,
 				040D54B71D4B56D6001250F4 /* LaunchScreen.storyboard */,
@@ -260,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
-				040D54B11D4B56D6001250F4 /* ViewController.swift in Sources */,
 				040D54AF1D4B56D6001250F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +486,7 @@
 				040D54D51D4B56D6001250F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040D54D61D4B56D6001250F4 /* Build configuration list for PBXNativeTarget "MobilizeProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +495,7 @@
 				040D54D81D4B56D6001250F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040D54D91D4B56D6001250F4 /* Build configuration list for PBXNativeTarget "MobilizeProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +504,7 @@
 				040D54DB1D4B56D6001250F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
