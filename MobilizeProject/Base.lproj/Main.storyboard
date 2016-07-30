@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-g0-gpo">
-                                                <rect key="frame" x="0.0" y="72" width="600" height="198"/>
+                                                <rect key="frame" x="0.0" y="72" width="600" height="202"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bold" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-4I-k2j">
                                                         <rect key="frame" x="289" y="0.0" width="22" height="29"/>
@@ -38,13 +38,22 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-37-8gM">
-                                                        <rect key="frame" x="284" y="173" width="32" height="25"/>
-                                                        <state key="normal" image="Image"/>
-                                                        <connections>
-                                                            <segue destination="CaD-Pe-1Ib" kind="show" id="cOe-ST-IZW"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-tp-KIg">
+                                                        <rect key="frame" x="269" y="173" width="62" height="29"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhu-ou-AGM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="29"/>
+                                                                <state key="normal" image="bold"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-37-8gM">
+                                                                <rect key="frame" x="30" y="0.0" width="32" height="29"/>
+                                                                <state key="normal" image="Image"/>
+                                                                <connections>
+                                                                    <segue destination="CaD-Pe-1Ib" kind="show" id="cOe-ST-IZW"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
