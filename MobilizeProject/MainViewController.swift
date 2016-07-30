@@ -10,10 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var attachedImageImageView: UIImageView!
+    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var messageTextViewHeightLayoutConstraint: NSLayoutConstraint!
     
     var mediator: MainMediator!
     
@@ -22,8 +21,8 @@ class MainViewController: UIViewController {
         let mainNavigationMediator = (self.navigationController as! MainNavigationController).mediator
         self.mediator = MainMediator(uiDelegate: self, delegate: mainNavigationMediator)
         mainNavigationMediator.mainMediator = self.mediator
-        self.edgesForExtendedLayout = .None
-        attachedImageImageView.image = nil
+//        self.edgesForExtendedLayout = .None
+//        attachedImageImageView.image = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,12 +32,6 @@ class MainViewController: UIViewController {
     
     @IBAction func sendButtonDidTap(sender: AnyObject) {
         self.view.endEditing(true)
-    }
-
-    @IBAction func imageButtonDidTap(sender: AnyObject) {
-    }
-    
-    @IBAction func boldButtonDidTap(sender: AnyObject) {
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,6 +79,10 @@ extension MainViewController: MainMediatorUIDelegate {
             let original = UIImage(data:imageData)!
             dispatch_async(dispatch_get_main_queue()) {
                 self.attachedImageImageView.image = original
+                dispatch_async(dispatch_get_main_queue()) {
+                    let bottomOffset = CGPoint(x: 0, y: self.mainScrollView.contentSize.height - self.mainScrollView.bounds.size.height + self.mainScrollView.contentInset.bottom)
+                    self.mainScrollView.setContentOffset(bottomOffset, animated: true)
+                }
             }
         }
         

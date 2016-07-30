@@ -21,40 +21,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9Y-sY-aH7" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="697"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageTest" translatesAutoresizingMaskIntoConstraints="NO" id="1DC-Dl-L8O">
-                                                <rect key="frame" x="104" y="8" width="392" height="512"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KRt-TZ-Qc6">
-                                                <rect key="frame" x="0.0" y="528" width="600" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="iVt-vB-jP5"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1V-BA-HSO" userLabel="Image">
-                                                <rect key="frame" x="284" y="664" width="32" height="25"/>
-                                                <state key="normal" image="Image"/>
-                                                <connections>
-                                                    <action selector="imageButtonDidTap:" destination="aHE-Lf-Xok" eventType="touchUpInside" id="Rqh-b7-pla"/>
-                                                    <segue destination="CaD-Pe-1Ib" kind="show" id="qsB-cU-MKO"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-g0-gpo">
+                                                <rect key="frame" x="0.0" y="83" width="600" height="198"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bold" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-4I-k2j">
+                                                        <rect key="frame" x="289" y="0.0" width="22" height="29"/>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1kc-kX-kG2">
+                                                        <rect key="frame" x="0.0" y="37" width="600" height="128"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="e3u-MG-7rJ"/>
+                                                        </constraints>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-37-8gM">
+                                                        <rect key="frame" x="284" y="173" width="32" height="25"/>
+                                                        <state key="normal" image="Image"/>
+                                                        <connections>
+                                                            <segue destination="CaD-Pe-1Ib" kind="show" id="cOe-ST-IZW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="q1V-BA-HSO" firstAttribute="top" secondItem="KRt-TZ-Qc6" secondAttribute="bottom" constant="8" id="Os7-CF-vWY"/>
-                                            <constraint firstItem="KRt-TZ-Qc6" firstAttribute="leading" secondItem="T9Y-sY-aH7" secondAttribute="leading" id="PYx-fL-QMr"/>
-                                            <constraint firstItem="1DC-Dl-L8O" firstAttribute="top" secondItem="T9Y-sY-aH7" secondAttribute="top" constant="8" id="hCF-aQ-xas"/>
-                                            <constraint firstItem="1DC-Dl-L8O" firstAttribute="centerX" secondItem="T9Y-sY-aH7" secondAttribute="centerX" id="q80-Sl-q8H"/>
-                                            <constraint firstItem="q1V-BA-HSO" firstAttribute="centerX" secondItem="T9Y-sY-aH7" secondAttribute="centerX" id="wbm-N1-ngR"/>
-                                            <constraint firstAttribute="trailing" secondItem="KRt-TZ-Qc6" secondAttribute="trailing" id="y62-sV-iha"/>
-                                            <constraint firstItem="KRt-TZ-Qc6" firstAttribute="top" secondItem="1DC-Dl-L8O" secondAttribute="bottom" constant="8" id="ybx-25-Ng1"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q1V-BA-HSO" secondAttribute="bottom" constant="8" id="z76-6g-FgZ"/>
+                                            <constraint firstItem="HSa-g0-gpo" firstAttribute="top" secondItem="T9Y-sY-aH7" secondAttribute="top" constant="83" id="9Fd-dy-6Qy"/>
+                                            <constraint firstItem="1kc-kX-kG2" firstAttribute="width" secondItem="T9Y-sY-aH7" secondAttribute="width" id="fQP-JV-Gbn"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HSa-g0-gpo" secondAttribute="bottom" constant="8" id="hhw-io-ijn"/>
+                                            <constraint firstItem="HSa-g0-gpo" firstAttribute="centerX" secondItem="T9Y-sY-aH7" secondAttribute="centerX" id="n5t-fS-pD7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -86,10 +86,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
-                        <outlet property="attachedImageImageView" destination="1DC-Dl-L8O" id="x9D-aE-2ex"/>
-                        <outlet property="mainScrollView" destination="qfb-yt-IaK" id="fAM-uu-bux"/>
-                        <outlet property="messageTextView" destination="KRt-TZ-Qc6" id="zt1-8O-PBV"/>
-                        <outlet property="messageTextViewHeightLayoutConstraint" destination="iVt-vB-jP5" id="uN3-uh-48V"/>
+                        <outlet property="attachedImageImageView" destination="ZWa-4I-k2j" id="Yp1-V0-Agw"/>
+                        <outlet property="mainScrollView" destination="qfb-yt-IaK" id="90i-aM-ZjE"/>
+                        <outlet property="messageTextView" destination="1kc-kX-kG2" id="y29-hZ-dxd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldi-ns-pvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,6 +167,6 @@
     </scenes>
     <resources>
         <image name="Image" width="32" height="25"/>
-        <image name="ImageTest" width="392" height="512"/>
+        <image name="bold" width="22" height="29"/>
     </resources>
 </document>

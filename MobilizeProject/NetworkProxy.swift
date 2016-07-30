@@ -20,7 +20,6 @@ extension NetworkProxy: INetworkProxy {
             switch response.result {
             case .Success:
                 let json = response.result.value!
-                print("\(json)")
                 success(json: json)
             case .Failure(let error):
                 failure(error: error)
