@@ -14,57 +14,45 @@ class ImagesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         let delegate = (self.navigationController as! MainNavigationController).mediator
         self.mediator = ImagesCollectionMediator(uiDelegate: self, delegate: delegate)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        mediator.setup()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return mediator.numberOfSectionsInCollectionView()
     }
 
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 20
+        return mediator.collectionView(numberOfItemsInSection: section)
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
-    
-        // Configure the cell
-    
+        let imageItem = mediator.imageItemForItemAtIndexPath(indexPath)
+        if let thumbnail = imageItem.thumbnail {
+            cell.imageImageView.image = thumbnail
+            return cell
+        }
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            let imageData = NSData(contentsOfURL: imageItem.imageThumb)!
+            let thumbnail = UIImage(data:imageData)!
+            self.mediator.cache(thumbnail, atIndexPath: indexPath)
+            dispatch_async(dispatch_get_main_queue()) {
+                cell.imageImageView.image = thumbnail
+            }
+        }
         return cell
     }
 
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
 
     /*
     // Uncomment this method to specify if the specified item should be selected
@@ -91,5 +79,9 @@ class ImagesCollectionViewController: UICollectionViewController {
 }
 
 extension ImagesCollectionViewController: ImagesCollectionMediatorUIDelegate {
+    
+    func refresh() {
+        self.collectionView?.reloadData()
+    }
     
 }
