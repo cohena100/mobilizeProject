@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var attachedImageImageView: UIImageView!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var messageTextViewHeightLayoutConstraint: NSLayoutConstraint!
     
@@ -18,8 +19,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let delegate = (self.navigationController as! MainNavigationController).mediator
-        self.mediator = MainMediator(uiDelegate: self, delegate: delegate)
+        let mainNavigationMediator = (self.navigationController as! MainNavigationController).mediator
+        self.mediator = MainMediator(uiDelegate: self, delegate: mainNavigationMediator)
+        mainNavigationMediator.mainMediator = self.mediator
+        self.edgesForExtendedLayout = .None
+        attachedImageImageView.image = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,5 +78,17 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainMediatorUIDelegate {
+    
+    func mainMediatorUIDelegateDidSelect(imageItem: ImageItem) {
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            let imageData = NSData(contentsOfURL: imageItem.original)!
+            let original = UIImage(data:imageData)!
+            dispatch_async(dispatch_get_main_queue()) {
+                self.attachedImageImageView.image = original
+            }
+        }
+        
+    }
     
 }

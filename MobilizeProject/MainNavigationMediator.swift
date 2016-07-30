@@ -9,13 +9,12 @@
 import Foundation
 
 protocol MainNavigationMediatorUIDelegate: class {
-    
+    func mainNavigationMediatorUIDelegatePop()
 }
 
 class MainNavigationMediator {
     
     weak var uiDelegate: MainNavigationMediatorUIDelegate?
-    
     weak var mainMediator: MainMediator?
     weak var imagesCollectionMediator: ImagesCollectionMediator?
     
@@ -30,5 +29,10 @@ extension MainNavigationMediator: MainMediatorDelegate {
 }
 
 extension MainNavigationMediator: ImagesCollectionMediatorDelegate {
+
+    func imagesCollectionMediatorDelegateDidSelect(imageItem: ImageItem) {
+        mainMediator?.didSelect(imageItem)
+        uiDelegate?.mainNavigationMediatorUIDelegatePop()
+    }
     
 }

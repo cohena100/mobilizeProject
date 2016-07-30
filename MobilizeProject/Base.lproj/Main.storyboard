@@ -86,6 +86,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="attachedImageImageView" destination="1DC-Dl-L8O" id="x9D-aE-2ex"/>
                         <outlet property="mainScrollView" destination="qfb-yt-IaK" id="fAM-uu-bux"/>
                         <outlet property="messageTextView" destination="KRt-TZ-Qc6" id="zt1-8O-PBV"/>
                         <outlet property="messageTextViewHeightLayoutConstraint" destination="iVt-vB-jP5" id="uN3-uh-48V"/>

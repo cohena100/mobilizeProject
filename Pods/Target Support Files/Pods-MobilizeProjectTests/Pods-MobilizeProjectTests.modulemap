@@ -1,0 +1,6 @@
+framework module Pods_MobilizeProjectTests {
+  umbrella header "Pods-MobilizeProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

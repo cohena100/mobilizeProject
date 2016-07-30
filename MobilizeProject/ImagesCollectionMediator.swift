@@ -9,11 +9,11 @@
 import UIKit
 
 protocol ImagesCollectionMediatorUIDelegate: class {
-    func refresh()
+    func imagesCollectionMediatorUIDelegateRefresh()
 }
 
 protocol ImagesCollectionMediatorDelegate: class {
-    
+    func imagesCollectionMediatorDelegateDidSelect(imageItem: ImageItem)
 }
 
 class ImagesCollectionMediator {
@@ -30,7 +30,7 @@ class ImagesCollectionMediator {
     
     func setup() {
         imagesCommands.setup({ 
-            self.uiDelegate?.refresh()
+            self.uiDelegate?.imagesCollectionMediatorUIDelegateRefresh()
             }) { (error) in
         }
     }
@@ -43,12 +43,17 @@ class ImagesCollectionMediator {
         return imagesCommands.images.count
     }
     
-    func imageItemForItemAtIndexPath(indexPath: NSIndexPath) -> Image {
+    func imageItemForItemAtIndexPath(indexPath: NSIndexPath) -> ImageItem {
         return imagesCommands.images[indexPath.row]
     }
     
     func cache(thumbnail: UIImage, atIndexPath indexPath: NSIndexPath) {
         imagesCommands.cache(thumbnail, atIndexPath: indexPath)
+    }
+
+    func collectionView(didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let imageItem = imagesCommands.images[indexPath.row]
+        delegate?.imagesCollectionMediatorDelegateDidSelect(imageItem)
     }
     
 }

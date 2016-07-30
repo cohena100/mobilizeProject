@@ -36,5 +36,9 @@ class MainNavigationController: UINavigationController {
 }
 
 extension MainNavigationController: MainNavigationMediatorUIDelegate {
+ 
+    func mainNavigationMediatorUIDelegatePop() {
+        self.popViewControllerAnimated(true)
+    }
     
 }

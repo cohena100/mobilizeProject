@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Image {
+struct ImageItem {
     let imageThumb: NSURL
     let original: NSURL
     var thumbnail: UIImage?

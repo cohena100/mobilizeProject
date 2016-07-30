@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainMediatorUIDelegate: class {
-    
+    func mainMediatorUIDelegateDidSelect(imageItem: ImageItem)
 }
 
 protocol MainMediatorDelegate: class {
@@ -24,6 +24,10 @@ class MainMediator {
     init(uiDelegate: MainMediatorUIDelegate, delegate: MainMediatorDelegate) {
         self.uiDelegate = uiDelegate
         self.delegate = delegate
+    }
+    
+    func didSelect(imageItem: ImageItem) {
+        uiDelegate?.mainMediatorUIDelegateDidSelect(imageItem)
     }
     
 }
