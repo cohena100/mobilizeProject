@@ -41,11 +41,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-tp-KIg">
                                                         <rect key="frame" x="269" y="173" width="62" height="29"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhu-ou-AGM">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhu-ou-AGM" userLabel="Bold Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="22" height="29"/>
                                                                 <state key="normal" image="bold"/>
+                                                                <connections>
+                                                                    <action selector="boldButtonDidTap:" destination="aHE-Lf-Xok" eventType="touchUpInside" id="j82-RU-ktY"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-37-8gM">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-37-8gM" userLabel="Image Button">
                                                                 <rect key="frame" x="30" y="0.0" width="32" height="29"/>
                                                                 <state key="normal" image="Image"/>
                                                                 <connections>

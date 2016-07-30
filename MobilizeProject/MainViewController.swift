@@ -24,6 +24,10 @@ class MainViewController: UIViewController {
         self.mediator = MainMediator(uiDelegate: self, delegate: mainNavigationMediator)
         mainNavigationMediator.mainMediator = self.mediator
         attachedImageImageView.hidden = true
+        messageTextView.becomeFirstResponder()
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.mainScrollView.setContentOffset(CGPointZero, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,9 +39,16 @@ class MainViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func boldButtonDidTap(sender: AnyObject) {
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         registerKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewWillDisappear(animated: Bool) {
