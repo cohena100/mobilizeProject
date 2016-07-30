@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-g0-gpo">
-                                                <rect key="frame" x="0.0" y="83" width="600" height="198"/>
+                                                <rect key="frame" x="0.0" y="72" width="600" height="198"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bold" translatesAutoresizingMaskIntoConstraints="NO" id="ZWa-4I-k2j">
                                                         <rect key="frame" x="289" y="0.0" width="22" height="29"/>
@@ -35,7 +35,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="e3u-MG-7rJ"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -51,7 +50,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="HSa-g0-gpo" firstAttribute="top" secondItem="T9Y-sY-aH7" secondAttribute="top" constant="83" id="9Fd-dy-6Qy"/>
+                                            <constraint firstItem="HSa-g0-gpo" firstAttribute="top" secondItem="T9Y-sY-aH7" secondAttribute="top" constant="72" id="9Fd-dy-6Qy"/>
                                             <constraint firstItem="1kc-kX-kG2" firstAttribute="width" secondItem="T9Y-sY-aH7" secondAttribute="width" id="fQP-JV-Gbn"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HSa-g0-gpo" secondAttribute="bottom" constant="8" id="hhw-io-ijn"/>
                                             <constraint firstItem="HSa-g0-gpo" firstAttribute="centerX" secondItem="T9Y-sY-aH7" secondAttribute="centerX" id="n5t-fS-pD7"/>
@@ -88,6 +87,8 @@
                     <connections>
                         <outlet property="attachedImageImageView" destination="ZWa-4I-k2j" id="Yp1-V0-Agw"/>
                         <outlet property="mainScrollView" destination="qfb-yt-IaK" id="90i-aM-ZjE"/>
+                        <outlet property="mainStackView" destination="HSa-g0-gpo" id="2Uu-6x-rmn"/>
+                        <outlet property="mainStackViewTopLayoutConstraint" destination="9Fd-dy-6Qy" id="hoJ-3h-0tz"/>
                         <outlet property="messageTextView" destination="1kc-kX-kG2" id="y29-hZ-dxd"/>
                     </connections>
                 </viewController>
