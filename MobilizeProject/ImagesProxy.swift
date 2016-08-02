@@ -20,6 +20,10 @@ class ImagesProxy {
 extension ImagesProxy: IImagesProxy {
     
     func setup(complete: () -> ()) {
+        if imageItemsCount > 0 {
+            complete()
+            return
+        }
         let url = "https://s3-us-west-2.amazonaws.com/ios-homework/ios/feed.json"
         Network().get(url, success: { [weak self] (json) in
             let jsonArray = json as! [[String: AnyObject]]
