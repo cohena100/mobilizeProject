@@ -1,5 +1,5 @@
 //
-//  NetworkProxy.swift
+//  Network.swift
 //  MobilizeProject
 //
 //  Created by Avi Cohen on 30/7/16.
@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-class NetworkProxy {
+class Network {
     
 }
 
-extension NetworkProxy: INetworkProxy {
+extension Network {
     
     func get(url: String, success: (json: AnyObject) -> (), failure: (error: NSError) -> ()) {
         Alamofire.request(.GET, url).validate().responseJSON { response in

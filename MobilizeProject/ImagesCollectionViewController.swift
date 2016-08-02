@@ -11,6 +11,7 @@ import UIKit
 class ImagesCollectionViewController: UICollectionViewController {
 
     var mediator: ImagesCollectionMediator!
+    var imageRequestId = 0
     
     deinit {
         print("ImagesCollectionViewController deinit")
@@ -40,22 +41,14 @@ class ImagesCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
-        let imageItem = mediator.imageItemForItemAtIndexPath(indexPath)
-        if let thumbnail = imageItem.thumbnail {
-            cell.imageImageView.image = thumbnail
-            return cell
-        }
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) { [weak self] in
-            let imageData = NSData(contentsOfURL: imageItem.imageThumb)!
-            let thumbnail = UIImage(data:imageData)!
-            dispatch_async(dispatch_get_main_queue()) {
-                guard let myself = self else {
-                    return
-                }
-                myself.mediator.cache(thumbnail, atIndexPath: indexPath)
-                cell.imageImageView.image = thumbnail
+        imageRequestId += 1
+        let requestId = imageRequestId
+        cell.tag = requestId
+        mediator.thumbnail(atIndexPath: indexPath) { (thumbnail) in
+            if cell.tag != requestId {
+                return
             }
+            cell.imageImageView.image = thumbnail
         }
         return cell
     }

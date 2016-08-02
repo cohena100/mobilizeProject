@@ -87,21 +87,13 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainMediatorUIDelegate {
     
-    func mainMediatorUIDelegateDidSelect(imageItem: ImageItem) {
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let imageData = NSData(contentsOfURL: imageItem.original)!
-            let original = UIImage(data:imageData)!
-            dispatch_async(dispatch_get_main_queue()) {
-                self.attachedImageImageView.image = original
-                self.attachedImageImageView.hidden = false
-                dispatch_async(dispatch_get_main_queue()) {
-                    let bottomOffset = CGPoint(x: 0, y: self.mainScrollView.contentSize.height - self.mainScrollView.bounds.size.height + self.mainScrollView.contentInset.bottom)
-                    self.mainScrollView.setContentOffset(bottomOffset, animated: true)
-                }
-            }
+    func mainMediatorUIDelegateDidSelectImage(image: UIImage) {
+        self.attachedImageImageView.image = image
+        self.attachedImageImageView.hidden = false
+        dispatch_async(dispatch_get_main_queue()) {
+            let bottomOffset = CGPoint(x: 0, y: self.mainScrollView.contentSize.height - self.mainScrollView.bounds.size.height + self.mainScrollView.contentInset.bottom)
+            self.mainScrollView.setContentOffset(bottomOffset, animated: true)
         }
-        
     }
-    
+
 }

@@ -10,35 +10,28 @@ import UIKit
 
 class ImagesCommands  {
     
-    let networkProxy: INetworkProxy
-    let url = "https://s3-us-west-2.amazonaws.com/ios-homework/ios/feed.json"
-    var images = [ImageItem]()
-    
-    init(networkProxy: INetworkProxy) {
-        self.networkProxy = networkProxy
+    weak var imagesProxy: IImagesProxy!
+    var imageItemsCount: Int {
+        return imagesProxy.imageItemsCount
     }
     
-    func setup(success: () -> (), failure: (error: NSError) -> ()) {
-        networkProxy.get(url, success: { (json) in
-            let jsonArray = json as! [[String: AnyObject]]
-            var newImages = [ImageItem]()
-            for element in jsonArray {
-                let e = element as! [String: String]
-                let imageThumb = e["imageThumb"]!
-                let original = e["original"]!
-                let newElement = ImageItem(imageThumb: NSURL(string: imageThumb)!, original: NSURL(string: original)!, thumbnail: nil)
-                newImages.append(newElement)
-            }
-            self.images = newImages
-            success()
-            }) { (error) in
-                print("error: \(error)")
-                failure(error: error)
+
+    init(imagesProxy: IImagesProxy) {
+        self.imagesProxy = imagesProxy
+    }
+    
+    func setup(complete: () -> ()) {
+        imagesProxy.setup { 
+            complete()
         }
     }
  
-    func cache(thumbnail: UIImage, atIndexPath indexPath: NSIndexPath) {
-        images[indexPath.row].thumbnail = thumbnail
+    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
+        return imagesProxy.thumbnail(atIndexPath: indexPath, complete: complete)
+    }
+    
+    func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ()) {
+        return imagesProxy.image(atIndexPath: indexPath, complete: complete)
     }
     
 }

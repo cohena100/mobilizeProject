@@ -30,8 +30,8 @@ extension MainNavigationMediator: MainMediatorDelegate {
 
 extension MainNavigationMediator: ImagesCollectionMediatorDelegate {
 
-    func imagesCollectionMediatorDelegateDidSelect(imageItem: ImageItem) {
-        mainMediator?.didSelect(imageItem)
+    func imagesCollectionMediatorDelegateDidSelectImage(atIndexPath indexPath: NSIndexPath) {
+        mainMediator?.didSelectImage(AtIndexPath: indexPath)
         uiDelegate?.mainNavigationMediatorUIDelegatePop()
     }
     

@@ -6,10 +6,10 @@
 //  Copyright © 2016 Avi Cohen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol MainMediatorUIDelegate: class {
-    func mainMediatorUIDelegateDidSelect(imageItem: ImageItem)
+    func mainMediatorUIDelegateDidSelectImage(image: UIImage)
 }
 
 protocol MainMediatorDelegate: class {
@@ -20,14 +20,18 @@ class MainMediator {
     
     weak var uiDelegate: MainMediatorUIDelegate?
     weak var delegate: MainMediatorDelegate?
+    let imagesCommands: ImagesCommands
     
     init(uiDelegate: MainMediatorUIDelegate, delegate: MainMediatorDelegate) {
         self.uiDelegate = uiDelegate
         self.delegate = delegate
+        self.imagesCommands = Model.sharedInstance.factory.getImagesCommands()
     }
     
-    func didSelect(imageItem: ImageItem) {
-        uiDelegate?.mainMediatorUIDelegateDidSelect(imageItem)
+    func didSelectImage(AtIndexPath indexPath: NSIndexPath) {
+        imagesCommands.image(atIndexPath: indexPath) { [weak self] (image) in
+            self?.uiDelegate?.mainMediatorUIDelegateDidSelectImage(image)
+        }
     }
     
 }

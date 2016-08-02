@@ -14,9 +14,7 @@
 		040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54C31D4B56D6001250F4 /* MobilizeProjectTests.swift */; };
 		040D54CF1D4B56D6001250F4 /* MobilizeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54CE1D4B56D6001250F4 /* MobilizeProjectUITests.swift */; };
 		040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54DE1D4B6600001250F4 /* MainViewController.swift */; };
-		041BDFB81D4C68BD004BBFB8 /* INetworkProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFB71D4C68BD004BBFB8 /* INetworkProxy.swift */; };
-		041BDFB91D4C68BD004BBFB8 /* INetworkProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFB71D4C68BD004BBFB8 /* INetworkProxy.swift */; };
-		041BDFBB1D4C68DC004BBFB8 /* NetworkProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFBA1D4C68DC004BBFB8 /* NetworkProxy.swift */; };
+		041BDFBB1D4C68DC004BBFB8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFBA1D4C68DC004BBFB8 /* Network.swift */; };
 		04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F751D4B8DD4007E4A55 /* MainNavigationController.swift */; };
 		04340F781D4B8F52007E4A55 /* MainNavigationMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F771D4B8F52007E4A55 /* MainNavigationMediator.swift */; };
 		04340F7B1D4B90CC007E4A55 /* MainMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F7A1D4B90CC007E4A55 /* MainMediator.swift */; };
@@ -28,6 +26,9 @@
 		04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F881D4BA9C9007E4A55 /* ModelFactory.swift */; };
 		04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
 		04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
+		0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
+		0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
+		0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */; };
 		048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
 		048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
 		41731A93CB87D5AC18A24D21 /* Pods_MobilizeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA79E5101C2F4732DD73277 /* Pods_MobilizeProject.framework */; };
@@ -66,8 +67,7 @@
 		040D54CE1D4B56D6001250F4 /* MobilizeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilizeProjectUITests.swift; sourceTree = "<group>"; };
 		040D54D01D4B56D6001250F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040D54DE1D4B6600001250F4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		041BDFB71D4C68BD004BBFB8 /* INetworkProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INetworkProxy.swift; sourceTree = "<group>"; };
-		041BDFBA1D4C68DC004BBFB8 /* NetworkProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProxy.swift; sourceTree = "<group>"; };
+		041BDFBA1D4C68DC004BBFB8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		04340F751D4B8DD4007E4A55 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		04340F771D4B8F52007E4A55 /* MainNavigationMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationMediator.swift; sourceTree = "<group>"; };
 		04340F7A1D4B90CC007E4A55 /* MainMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMediator.swift; sourceTree = "<group>"; };
@@ -78,6 +78,8 @@
 		04340F871D4BA9C9007E4A55 /* IModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IModelFactory.swift; sourceTree = "<group>"; };
 		04340F881D4BA9C9007E4A55 /* ModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFactory.swift; sourceTree = "<group>"; };
 		04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCommands.swift; sourceTree = "<group>"; };
+		0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IImagesProxy.swift; sourceTree = "<group>"; };
+		0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesProxy.swift; sourceTree = "<group>"; };
 		048B556C1D4C755D00D10A88 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		25FF9A9DB148636F935C2BB4 /* Pods_MobilizeProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilizeProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3327A76F18AD9D7FB9D3281B /* Pods-MobilizeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilizeProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilizeProjectTests/Pods-MobilizeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,8 +204,9 @@
 		04340F851D4BA98F007E4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				041BDFB71D4C68BD004BBFB8 /* INetworkProxy.swift */,
-				041BDFBA1D4C68DC004BBFB8 /* NetworkProxy.swift */,
+				041BDFBA1D4C68DC004BBFB8 /* Network.swift */,
+				0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */,
+				0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -497,16 +500,17 @@
 				04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */,
 				04340F811D4B9C70007E4A55 /* ImagesCollectionMediator.swift in Sources */,
 				04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */,
+				0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */,
 				048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				04340F831D4BA2E5007E4A55 /* ImageCollectionViewCell.swift in Sources */,
 				04340F7B1D4B90CC007E4A55 /* MainMediator.swift in Sources */,
 				04340F781D4B8F52007E4A55 /* MainNavigationMediator.swift in Sources */,
 				04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,
-				041BDFB81D4C68BD004BBFB8 /* INetworkProxy.swift in Sources */,
 				04340F8A1D4BA9C9007E4A55 /* IModelFactory.swift in Sources */,
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
 				04340F7F1D4B9B71007E4A55 /* ImagesCollectionViewController.swift in Sources */,
-				041BDFBB1D4C68DC004BBFB8 /* NetworkProxy.swift in Sources */,
+				041BDFBB1D4C68DC004BBFB8 /* Network.swift in Sources */,
+				0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				040D54AF1D4B56D6001250F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041BDFB91D4C68BD004BBFB8 /* INetworkProxy.swift in Sources */,
+				0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
 				04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,

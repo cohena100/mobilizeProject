@@ -13,7 +13,7 @@ protocol ImagesCollectionMediatorUIDelegate: class {
 }
 
 protocol ImagesCollectionMediatorDelegate: class {
-    func imagesCollectionMediatorDelegateDidSelect(imageItem: ImageItem)
+    func imagesCollectionMediatorDelegateDidSelectImage(atIndexPath indexPath: NSIndexPath)
 }
 
 class ImagesCollectionMediator {
@@ -29,9 +29,8 @@ class ImagesCollectionMediator {
     }
     
     func setup() {
-        imagesCommands.setup({ 
+        imagesCommands.setup { 
             self.uiDelegate?.imagesCollectionMediatorUIDelegateRefresh()
-            }) { (error) in
         }
     }
     
@@ -40,20 +39,15 @@ class ImagesCollectionMediator {
     }
     
     func collectionView(numberOfItemsInSection section: Int) -> Int {
-        return imagesCommands.images.count
+        return imagesCommands.imageItemsCount
     }
     
-    func imageItemForItemAtIndexPath(indexPath: NSIndexPath) -> ImageItem {
-        return imagesCommands.images[indexPath.row]
+    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
+        return imagesCommands.thumbnail(atIndexPath: indexPath, complete: complete)
     }
     
-    func cache(thumbnail: UIImage, atIndexPath indexPath: NSIndexPath) {
-        imagesCommands.cache(thumbnail, atIndexPath: indexPath)
-    }
-
     func collectionView(didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let imageItem = imagesCommands.images[indexPath.row]
-        delegate?.imagesCollectionMediatorDelegateDidSelect(imageItem)
+        delegate?.imagesCollectionMediatorDelegateDidSelectImage(atIndexPath: indexPath)
     }
     
 }

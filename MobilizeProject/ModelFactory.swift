@@ -10,8 +10,10 @@ import Foundation
 
 class ModelFactory: IModelFactory {
     
+    let imagesProxy = ImagesProxy()
+    
     func getImagesCommands() -> ImagesCommands {
-        return ImagesCommands(networkProxy: NetworkProxy())
+        return ImagesCommands(imagesProxy: imagesProxy)
     }
     
 }
