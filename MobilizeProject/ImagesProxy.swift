@@ -27,7 +27,7 @@ extension ImagesProxy: IImagesProxy {
                 let item = jsonItem as! [String: String]
                 let imageThumb = item["imageThumb"]!
                 let original = item["original"]!
-                let newElement = ImageItem(imageThumb: NSURL(string: imageThumb)!, original: NSURL(string: original)!, thumbnail: nil)
+                let newElement = ImageItem(thumbnailURL: NSURL(string: imageThumb)!, imageURL: NSURL(string: original)!, thumbnailImage: nil)
                 return newElement
             })
             complete()
@@ -39,15 +39,15 @@ extension ImagesProxy: IImagesProxy {
     
     func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
         let imageItem = imageItems[indexPath.row]
-        if imageItem.thumbnail != nil {
-            complete(thumbnail: imageItem.thumbnail!)
+        if imageItem.thumbnailImage != nil {
+            complete(thumbnail: imageItem.thumbnailImage!)
             return
         }
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) { [weak self] in
-            let imageData = NSData(contentsOfURL: imageItem.imageThumb)!
+            let imageData = NSData(contentsOfURL: imageItem.thumbnailURL)!
             let thumbnail = UIImage(data:imageData)!
-            self?.imageItems[indexPath.row].thumbnail = thumbnail
+            self?.imageItems[indexPath.row].thumbnailImage = thumbnail
             dispatch_async(dispatch_get_main_queue()) {
                 complete(thumbnail: thumbnail)
             }
@@ -59,7 +59,7 @@ extension ImagesProxy: IImagesProxy {
         let imageItem = imageItems[indexPath.row]
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let imageData = NSData(contentsOfURL: imageItem.original)!
+            let imageData = NSData(contentsOfURL: imageItem.imageURL)!
             let image = UIImage(data:imageData)!
             dispatch_async(dispatch_get_main_queue()) {
                 complete(image: image)
