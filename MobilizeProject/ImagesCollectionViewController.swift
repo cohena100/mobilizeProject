@@ -44,6 +44,7 @@ class ImagesCollectionViewController: UICollectionViewController {
         imageRequestId += 1
         let requestId = imageRequestId
         cell.tag = requestId
+        cell.imageImageView.image = nil
         mediator.thumbnail(atIndexPath: indexPath) { (thumbnail) in
             if cell.tag != requestId {
                 return
