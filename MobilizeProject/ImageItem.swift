@@ -9,7 +9,7 @@
 import UIKit
 
 struct ImageItem {
-    let thumbnailURL: NSURL
-    let imageURL: NSURL
+    let thumbnailURL: NSURL!
+    let imageURL: NSURL!
     var thumbnailImage: UIImage?
 }
