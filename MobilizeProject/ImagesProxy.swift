@@ -31,7 +31,7 @@ extension ImagesProxy: IImagesProxy {
                 let item = jsonItem as! [String: String]
                 let imageThumb = item["imageThumb"]!
                 let original = item["original"]!
-                let newElement = ImageItem(thumbnailURL: NSURL(string: imageThumb)!, imageURL: NSURL(string: original)!, thumbnailImage: nil)
+                let newElement = ImageItem(imageURL: NSURL(string: original)!, thumbnailImageDownloader: ImageDownloader(imageURL: NSURL(string: imageThumb)!))
                 return newElement
             })
             complete()
@@ -41,25 +41,13 @@ extension ImagesProxy: IImagesProxy {
         }
     }
     
-    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
+    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
         let imageItem = imageItems[indexPath.row]
-        if imageItem.thumbnailImage != nil {
-            complete(thumbnail: imageItem.thumbnailImage!)
-            return
-        }
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) { [weak self] in
-            let imageData = NSData(contentsOfURL: imageItem.thumbnailURL)!
-            let thumbnail = UIImage(data:imageData)!
-            self?.imageItems[indexPath.row].thumbnailImage = thumbnail
-            dispatch_async(dispatch_get_main_queue()) {
-                complete(thumbnail: thumbnail)
-            }
-        }
+        imageItem.thumbnailImageDownloader.sendGetImage(complete)
         
     }
     
-    func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ()) {
+    func image(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
         let imageItem = imageItems[indexPath.row]
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {

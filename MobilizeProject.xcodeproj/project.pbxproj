@@ -26,6 +26,9 @@
 		04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F881D4BA9C9007E4A55 /* ModelFactory.swift */; };
 		04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
 		04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
+		045B93BC1D51B09D0016D894 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BB1D51B09D0016D894 /* ImageDownloader.swift */; };
+		045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
+		045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
 		0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
 		0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
 		0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */; };
@@ -78,6 +81,8 @@
 		04340F871D4BA9C9007E4A55 /* IModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IModelFactory.swift; sourceTree = "<group>"; };
 		04340F881D4BA9C9007E4A55 /* ModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFactory.swift; sourceTree = "<group>"; };
 		04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCommands.swift; sourceTree = "<group>"; };
+		045B93BB1D51B09D0016D894 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		045B93BE1D51B2710016D894 /* TypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IImagesProxy.swift; sourceTree = "<group>"; };
 		0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesProxy.swift; sourceTree = "<group>"; };
 		048B556C1D4C755D00D10A88 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 		040D54AD1D4B56D6001250F4 /* MobilizeProject */ = {
 			isa = PBXGroup;
 			children = (
+				045B93BD1D51B2540016D894 /* Common */,
 				04340F851D4BA98F007E4A55 /* Model */,
 				04340F841D4BA987007E4A55 /* Controller */,
 				04340F791D4B8F6F007E4A55 /* View */,
@@ -196,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */,
-				048B556C1D4C755D00D10A88 /* ImageItem.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -204,11 +209,21 @@
 		04340F851D4BA98F007E4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				048B556C1D4C755D00D10A88 /* ImageItem.swift */,
+				045B93BB1D51B09D0016D894 /* ImageDownloader.swift */,
 				041BDFBA1D4C68DC004BBFB8 /* Network.swift */,
 				0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */,
 				0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		045B93BD1D51B2540016D894 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				045B93BE1D51B2710016D894 /* TypeAliases.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		3A677911457B9E9020589D31 /* Frameworks */ = {
@@ -507,6 +522,8 @@
 				04340F781D4B8F52007E4A55 /* MainNavigationMediator.swift in Sources */,
 				04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,
 				04340F8A1D4BA9C9007E4A55 /* IModelFactory.swift in Sources */,
+				045B93BC1D51B09D0016D894 /* ImageDownloader.swift in Sources */,
+				045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */,
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
 				04340F7F1D4B9B71007E4A55 /* ImagesCollectionViewController.swift in Sources */,
 				041BDFBB1D4C68DC004BBFB8 /* Network.swift in Sources */,
@@ -522,6 +539,7 @@
 				0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
+				045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */,
 				04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

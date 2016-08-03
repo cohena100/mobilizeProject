@@ -13,7 +13,7 @@ protocol IImagesProxy: class {
     var imageItemsCount: Int { get }
     
     func setup(complete: () -> ())
-    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ())
-    func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ())
+    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid)
+    func image(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid)
     
 }
