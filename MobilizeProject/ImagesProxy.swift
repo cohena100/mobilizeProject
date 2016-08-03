@@ -44,7 +44,6 @@ extension ImagesProxy: IImagesProxy {
     func thumbnail(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
         let imageItem = imageItems[indexPath.row]
         imageItem.thumbnailImageDownloader.sendGetImage(complete)
-        
     }
     
     func image(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
