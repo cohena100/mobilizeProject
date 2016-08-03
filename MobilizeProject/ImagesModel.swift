@@ -28,7 +28,7 @@ class ImagesModel {
             return
         }
         let url = "https://s3-us-west-2.amazonaws.com/ios-homework/ios/feed.json"
-        Network().get(url, success: { [weak self] (json) in
+        network.get(url, success: { [weak self] (json) in
             let jsonArray = json as! [[String: AnyObject]]
             self?.imageItems = jsonArray.map({ (jsonItem) -> ImageItem in
                 let item = jsonItem as! [String: String]
