@@ -29,12 +29,12 @@ class ImageDownloader {
         }
         if !downloadingImage {
             self.downloadingImage = true
-            operationQueue.addOperationWithBlock {
+            operationQueue.addOperationWithBlock { [unowned self] in
                 let imageData = NSData(contentsOfURL: self.imageURL)!
                 self.image = UIImage(data:imageData)
             }
         }
-        operationQueue.addOperationWithBlock {
+        operationQueue.addOperationWithBlock { [unowned self] in
             dispatch_async(dispatch_get_main_queue()) {
                 complete(image: self.image!)
             }
