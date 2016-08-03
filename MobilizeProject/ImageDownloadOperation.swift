@@ -11,11 +11,13 @@ import UIKit
 class ImageDownloadOperation: NSOperation {
     
     let url: NSURL
+    let network: Network
     var complete: UIImageOptionalVoid!
     var state = (executing: false, finished: false)
     
-    init(url: NSURL, complete: UIImageOptionalVoid) {
+    init(url: NSURL, network: Network, complete: UIImageOptionalVoid) {
         self.url = url
+        self.network = network
         self.complete = complete
         super.init()
     }
@@ -47,11 +49,11 @@ class ImageDownloadOperation: NSOperation {
     }
     
     override func main() {
-        let imageData = NSData(contentsOfURL: self.url)!
+        let image = network.image(forURL: self.url)!
         if self.cancelled {
             self.complete(image: nil)
         } else {
-            self.complete(image: UIImage(data:imageData))
+            self.complete(image: image)
         }
         self.willChangeValueForKey("finished")
         self.willChangeValueForKey("executing")

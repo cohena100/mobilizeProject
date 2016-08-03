@@ -10,7 +10,7 @@ import Foundation
 
 class ModelFactory: IModelFactory {
     
-    let imagesModel = ImagesModel()
+    let imagesModel = ImagesModel(network: Network())
     
     func getImagesCommands() -> ImagesCommands {
         return ImagesCommands(imagesModel: imagesModel)

@@ -10,11 +10,17 @@ import UIKit
 
 class ImagesModel {
 
+    let network: Network
     var imageItems = [ImageItem]()
     var imageItemsCount: Int {
         return imageItems.count
     }
-    var thumbnailsManager = ImagesManager()
+    var thumbnailsManager: ImagesManager
+
+    init(network: Network) {
+        self.network = network
+        self.thumbnailsManager = ImagesManager(network: self.network)
+    }
     
     func setup(complete: () -> ()) {
         if imageItemsCount > 0 {

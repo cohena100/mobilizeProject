@@ -10,17 +10,19 @@ import Foundation
 
 class ImagesManager {
 
+    let network: Network
     var requestOperations = [Int: WeakObject<NSOperation>]()
     let operationQueue = NSOperationQueue()
     
-    init() {
+    init(network: Network) {
+        self.network = network
         operationQueue.name = "Image Loader"
         operationQueue.qualityOfService = .Background
         operationQueue.maxConcurrentOperationCount = 2
     }
     
     func image(withRequest request: Int, url: NSURL, complete: UIImageOptionalVoid) {
-        let newOperation = ImageDownloadOperation(url: url, complete: complete)
+        let newOperation = ImageDownloadOperation(url: url, network: network, complete: complete)
         if let operation = requestOperations[request]?.object {
             operation.cancel()
         }

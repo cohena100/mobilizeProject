@@ -6,7 +6,7 @@
 //  Copyright © 2016 Avi Cohen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 
 class Network {
@@ -14,6 +14,14 @@ class Network {
 }
 
 extension Network {
+    
+    func image(forURL url: NSURL) -> UIImage? {
+        let imageData = NSData(contentsOfURL: url)
+        guard let data = imageData else {
+            return nil
+        }
+        return UIImage(data:data)
+    }
     
     func get(url: String, success: (json: AnyObject) -> (), failure: (error: NSError) -> ()) {
         Alamofire.request(.GET, url).validate().responseJSON { response in
