@@ -29,13 +29,10 @@
 		045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
 		045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
 		045B93C21D51D3340016D894 /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C11D51D3340016D894 /* ImagesManager.swift */; };
-		045B93C41D51D36C0016D894 /* ImagesManagerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */; };
 		045B93C61D51E0500016D894 /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C51D51E0500016D894 /* WeakObject.swift */; };
 		045B93C71D51E0500016D894 /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C51D51E0500016D894 /* WeakObject.swift */; };
 		045B93C91D51E2380016D894 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */; };
-		0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
-		0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
-		0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */; };
+		0463D0821D4D157B006E1AE7 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesModel.swift */; };
 		048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
 		048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
 		41731A93CB87D5AC18A24D21 /* Pods_MobilizeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA79E5101C2F4732DD73277 /* Pods_MobilizeProject.framework */; };
@@ -87,11 +84,9 @@
 		04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCommands.swift; sourceTree = "<group>"; };
 		045B93BE1D51B2710016D894 /* TypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		045B93C11D51D3340016D894 /* ImagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
-		045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManagerItem.swift; sourceTree = "<group>"; };
 		045B93C51D51E0500016D894 /* WeakObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObject.swift; sourceTree = "<group>"; };
 		045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
-		0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IImagesProxy.swift; sourceTree = "<group>"; };
-		0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesProxy.swift; sourceTree = "<group>"; };
+		0463D0811D4D157B006E1AE7 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		048B556C1D4C755D00D10A88 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		25FF9A9DB148636F935C2BB4 /* Pods_MobilizeProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilizeProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3327A76F18AD9D7FB9D3281B /* Pods-MobilizeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilizeProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilizeProjectTests/Pods-MobilizeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,13 +211,11 @@
 		04340F851D4BA98F007E4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */,
-				045B93C11D51D3340016D894 /* ImagesManager.swift */,
 				045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */,
+				045B93C11D51D3340016D894 /* ImagesManager.swift */,
 				048B556C1D4C755D00D10A88 /* ImageItem.swift */,
+				0463D0811D4D157B006E1AE7 /* ImagesModel.swift */,
 				041BDFBA1D4C68DC004BBFB8 /* Network.swift */,
-				0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */,
-				0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -335,6 +328,7 @@
 				TargetAttributes = {
 					040D54AA1D4B56D6001250F4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4JEK9RGB6D;
 					};
 					040D54BE1D4B56D6001250F4 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -522,12 +516,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04340F891D4BA9C9007E4A55 /* Model.swift in Sources */,
-				045B93C41D51D36C0016D894 /* ImagesManagerItem.swift in Sources */,
 				04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */,
 				04340F811D4B9C70007E4A55 /* ImagesCollectionMediator.swift in Sources */,
 				045B93C91D51E2380016D894 /* ImageDownloadOperation.swift in Sources */,
 				04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */,
-				0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */,
+				0463D0821D4D157B006E1AE7 /* ImagesModel.swift in Sources */,
 				048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				04340F831D4BA2E5007E4A55 /* ImageCollectionViewCell.swift in Sources */,
 				04340F7B1D4B90CC007E4A55 /* MainMediator.swift in Sources */,
@@ -540,7 +533,6 @@
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
 				04340F7F1D4B9B71007E4A55 /* ImagesCollectionViewController.swift in Sources */,
 				041BDFBB1D4C68DC004BBFB8 /* Network.swift in Sources */,
-				0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				040D54AF1D4B56D6001250F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +541,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				045B93C71D51E0500016D894 /* WeakObject.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
@@ -691,10 +682,13 @@
 			baseConfigurationReference = F1301CE024AF9F48B90168D2 /* Pods-MobilizeProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MobilizeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.MobilizeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -703,10 +697,13 @@
 			baseConfigurationReference = B1534042B03F9DC2244BD27C /* Pods-MobilizeProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MobilizeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.MobilizeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

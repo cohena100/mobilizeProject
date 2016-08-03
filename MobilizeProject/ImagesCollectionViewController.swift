@@ -46,7 +46,7 @@ class ImagesCollectionViewController: UICollectionViewController {
             cell.tag = celltag
         }
         cell.imageImageView.image = nil
-        mediator.thumbnail(atIndexPath: indexPath, cellTag: celltag) { (image) in
+        mediator.thumbnail(atIndexPath: indexPath, cellTag: cell.tag) { (image) in
             if image == nil {
                 return
             }

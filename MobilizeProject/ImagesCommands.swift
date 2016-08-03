@@ -10,28 +10,28 @@ import UIKit
 
 class ImagesCommands  {
     
-    weak var imagesProxy: IImagesProxy!
+    weak var imagesModel: ImagesModel!
     var imageItemsCount: Int {
-        return imagesProxy.imageItemsCount
+        return imagesModel.imageItemsCount
     }
     
 
-    init(imagesProxy: IImagesProxy) {
-        self.imagesProxy = imagesProxy
+    init(imagesModel: ImagesModel) {
+        self.imagesModel = imagesModel
     }
     
     func setup(complete: () -> ()) {
-        imagesProxy.setup { 
+        imagesModel.setup {
             complete()
         }
     }
  
     func thumbnail(atIndexPath indexPath: NSIndexPath, request: Int, complete: UIImageOptionalVoid) {
-        return imagesProxy.thumbnail(atIndexPath: indexPath, request: request, complete: complete)
+        return imagesModel.thumbnail(atIndexPath: indexPath, request: request, complete: complete)
     }
     
     func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ()) {
-        return imagesProxy.image(atIndexPath: indexPath, complete: complete)
+        return imagesModel.image(atIndexPath: indexPath, complete: complete)
     }
     
 }

@@ -34,10 +34,10 @@ class ImageDownloadOperation: NSOperation {
     
     override func start() {
         if cancelled {
+            complete(image: nil)
             willChangeValueForKey("finished")
             state = (executing: state.executing, finished: true)
             didChangeValueForKey("finished")
-            complete(image: nil)
             return
         }
         willChangeValueForKey("executing")
@@ -48,17 +48,16 @@ class ImageDownloadOperation: NSOperation {
     
     override func main() {
         let imageData = NSData(contentsOfURL: self.url)!
-        if cancelled {
-            complete(image: nil)
+        if self.cancelled {
+            self.complete(image: nil)
         } else {
-            complete(image: UIImage(data:imageData))
+            self.complete(image: UIImage(data:imageData))
         }
-        complete(image: UIImage(data:imageData))
-        willChangeValueForKey("finished")
-        willChangeValueForKey("executing")
-        state = (executing: false, finished: true)
-        didChangeValueForKey("executing")
-        didChangeValueForKey("finished")
+        self.willChangeValueForKey("finished")
+        self.willChangeValueForKey("executing")
+        self.state = (executing: false, finished: true)
+        self.didChangeValueForKey("executing")
+        self.didChangeValueForKey("finished")
     }
     
 }

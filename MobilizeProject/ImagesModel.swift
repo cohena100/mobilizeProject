@@ -1,5 +1,5 @@
 //
-//  ImagesProxy.swift
+//  ImagesModel.swift
 //  MobilizeProject
 //
 //  Created by Avi Cohen on 30/7/16.
@@ -8,17 +8,13 @@
 
 import UIKit
 
-class ImagesProxy {
+class ImagesModel {
 
     var imageItems = [ImageItem]()
     var imageItemsCount: Int {
         return imageItems.count
     }
     var thumbnailsManager = ImagesManager()
-    
-}
-
-extension ImagesProxy: IImagesProxy {
     
     func setup(complete: () -> ()) {
         if imageItemsCount > 0 {
@@ -49,7 +45,9 @@ extension ImagesProxy: IImagesProxy {
             return
         }
         thumbnailsManager.image(withRequest: request, url: imageItem.thumbnailURL) { [unowned self] (image) in
-            self.imageItems[indexPath.row].thumbnail = image
+            if image != nil {
+                self.imageItems[indexPath.row].thumbnail = image
+            }
             complete(image: image)
         }
     }
@@ -65,5 +63,5 @@ extension ImagesProxy: IImagesProxy {
             }
         }
     }
-    
+
 }

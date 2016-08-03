@@ -10,10 +10,10 @@ import Foundation
 
 class ModelFactory: IModelFactory {
     
-    let imagesProxy = ImagesProxy()
+    let imagesModel = ImagesModel()
     
     func getImagesCommands() -> ImagesCommands {
-        return ImagesCommands(imagesProxy: imagesProxy)
+        return ImagesCommands(imagesModel: imagesModel)
     }
     
 }
