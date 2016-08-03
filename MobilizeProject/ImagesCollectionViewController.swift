@@ -11,7 +11,7 @@ import UIKit
 class ImagesCollectionViewController: UICollectionViewController {
 
     var mediator: ImagesCollectionMediator!
-    var imageRequestId = 0
+    var celltag = 0
     
     deinit {
         print("ImagesCollectionViewController deinit")
@@ -41,15 +41,16 @@ class ImagesCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
-        imageRequestId += 1
-        let requestId = imageRequestId
-        cell.tag = requestId
+        if cell.tag == 0 {
+            celltag += 1
+            cell.tag = celltag
+        }
         cell.imageImageView.image = nil
-        mediator.thumbnail(atIndexPath: indexPath) { (thumbnail) in
-            if cell.tag != requestId {
+        mediator.thumbnail(atIndexPath: indexPath, cellTag: celltag) { (image) in
+            if image == nil {
                 return
             }
-            cell.imageImageView.image = thumbnail
+            cell.imageImageView.image = image
         }
         return cell
     }

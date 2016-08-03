@@ -1,5 +1,5 @@
 //
-//  TypeAliases.swift
+//  ImagesManagerItem.swift
 //  MobilizeProject
 //
 //  Created by Avi Cohen on 03/08/2016.
@@ -8,5 +8,9 @@
 
 import UIKit
 
-typealias UIImageOptionalVoid = (image: UIImage?) -> ()
-typealias UIImageVoid = (image: UIImage) -> ()
+struct ImagesManagerItem {
+    
+    let imageURL: NSURL
+    var image: UIImage?
+    
+}

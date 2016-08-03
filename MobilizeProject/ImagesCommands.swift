@@ -26,8 +26,8 @@ class ImagesCommands  {
         }
     }
  
-    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
-        return imagesProxy.thumbnail(atIndexPath: indexPath, complete: complete)
+    func thumbnail(atIndexPath indexPath: NSIndexPath, request: Int, complete: UIImageOptionalVoid) {
+        return imagesProxy.thumbnail(atIndexPath: indexPath, request: request, complete: complete)
     }
     
     func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ()) {

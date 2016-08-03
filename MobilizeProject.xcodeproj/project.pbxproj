@@ -26,9 +26,13 @@
 		04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F881D4BA9C9007E4A55 /* ModelFactory.swift */; };
 		04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
 		04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */; };
-		045B93BC1D51B09D0016D894 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BB1D51B09D0016D894 /* ImageDownloader.swift */; };
 		045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
 		045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93BE1D51B2710016D894 /* TypeAliases.swift */; };
+		045B93C21D51D3340016D894 /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C11D51D3340016D894 /* ImagesManager.swift */; };
+		045B93C41D51D36C0016D894 /* ImagesManagerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */; };
+		045B93C61D51E0500016D894 /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C51D51E0500016D894 /* WeakObject.swift */; };
+		045B93C71D51E0500016D894 /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C51D51E0500016D894 /* WeakObject.swift */; };
+		045B93C91D51E2380016D894 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */; };
 		0463D07F1D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
 		0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */; };
 		0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */; };
@@ -81,8 +85,11 @@
 		04340F871D4BA9C9007E4A55 /* IModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IModelFactory.swift; sourceTree = "<group>"; };
 		04340F881D4BA9C9007E4A55 /* ModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFactory.swift; sourceTree = "<group>"; };
 		04340F8C1D4BAA40007E4A55 /* ImagesCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCommands.swift; sourceTree = "<group>"; };
-		045B93BB1D51B09D0016D894 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		045B93BE1D51B2710016D894 /* TypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		045B93C11D51D3340016D894 /* ImagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
+		045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManagerItem.swift; sourceTree = "<group>"; };
+		045B93C51D51E0500016D894 /* WeakObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObject.swift; sourceTree = "<group>"; };
+		045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IImagesProxy.swift; sourceTree = "<group>"; };
 		0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesProxy.swift; sourceTree = "<group>"; };
 		048B556C1D4C755D00D10A88 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
@@ -209,8 +216,10 @@
 		04340F851D4BA98F007E4A55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				045B93C31D51D36C0016D894 /* ImagesManagerItem.swift */,
+				045B93C11D51D3340016D894 /* ImagesManager.swift */,
+				045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */,
 				048B556C1D4C755D00D10A88 /* ImageItem.swift */,
-				045B93BB1D51B09D0016D894 /* ImageDownloader.swift */,
 				041BDFBA1D4C68DC004BBFB8 /* Network.swift */,
 				0463D07E1D4D156B006E1AE7 /* IImagesProxy.swift */,
 				0463D0811D4D157B006E1AE7 /* ImagesProxy.swift */,
@@ -222,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				045B93BE1D51B2710016D894 /* TypeAliases.swift */,
+				045B93C51D51E0500016D894 /* WeakObject.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -512,8 +522,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04340F891D4BA9C9007E4A55 /* Model.swift in Sources */,
+				045B93C41D51D36C0016D894 /* ImagesManagerItem.swift in Sources */,
 				04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */,
 				04340F811D4B9C70007E4A55 /* ImagesCollectionMediator.swift in Sources */,
+				045B93C91D51E2380016D894 /* ImageDownloadOperation.swift in Sources */,
 				04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */,
 				0463D0821D4D157B006E1AE7 /* ImagesProxy.swift in Sources */,
 				048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */,
@@ -521,8 +533,9 @@
 				04340F7B1D4B90CC007E4A55 /* MainMediator.swift in Sources */,
 				04340F781D4B8F52007E4A55 /* MainNavigationMediator.swift in Sources */,
 				04340F8D1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,
+				045B93C21D51D3340016D894 /* ImagesManager.swift in Sources */,
 				04340F8A1D4BA9C9007E4A55 /* IModelFactory.swift in Sources */,
-				045B93BC1D51B09D0016D894 /* ImageDownloader.swift in Sources */,
+				045B93C61D51E0500016D894 /* WeakObject.swift in Sources */,
 				045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */,
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
 				04340F7F1D4B9B71007E4A55 /* ImagesCollectionViewController.swift in Sources */,
@@ -538,6 +551,7 @@
 			files = (
 				0463D0801D4D156B006E1AE7 /* IImagesProxy.swift in Sources */,
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
+				045B93C71D51E0500016D894 /* WeakObject.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
 				045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */,
 				04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,

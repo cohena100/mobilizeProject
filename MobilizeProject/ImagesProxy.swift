@@ -14,6 +14,7 @@ class ImagesProxy {
     var imageItemsCount: Int {
         return imageItems.count
     }
+    var thumbnailsManager = ImagesManager()
     
 }
 
@@ -31,7 +32,7 @@ extension ImagesProxy: IImagesProxy {
                 let item = jsonItem as! [String: String]
                 let imageThumb = item["imageThumb"]!
                 let original = item["original"]!
-                let newElement = ImageItem(imageURL: NSURL(string: original)!, thumbnailImageDownloader: ImageDownloader(imageURL: NSURL(string: imageThumb)!))
+                let newElement = ImageItem(imageURL: NSURL(string: original)!, thumbnailURL: NSURL(string: imageThumb)!, thumbnail: nil)
                 return newElement
             })
             complete()
@@ -41,9 +42,16 @@ extension ImagesProxy: IImagesProxy {
         }
     }
     
-    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
+    func thumbnail(atIndexPath indexPath: NSIndexPath, request: Int, complete: UIImageOptionalVoid) {
         let imageItem = imageItems[indexPath.row]
-        imageItem.thumbnailImageDownloader.sendGetImage(complete)
+        if imageItem.thumbnail != nil {
+            complete(image: imageItem.thumbnail!)
+            return
+        }
+        thumbnailsManager.image(withRequest: request, url: imageItem.thumbnailURL) { [unowned self] (image) in
+            self.imageItems[indexPath.row].thumbnail = image
+            complete(image: image)
+        }
     }
     
     func image(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {

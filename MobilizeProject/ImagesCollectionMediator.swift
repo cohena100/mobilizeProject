@@ -42,8 +42,12 @@ class ImagesCollectionMediator {
         return imagesCommands.imageItemsCount
     }
     
-    func thumbnail(atIndexPath indexPath: NSIndexPath, complete: (thumbnail: UIImage) -> ()) {
-        return imagesCommands.thumbnail(atIndexPath: indexPath, complete: complete)
+    func thumbnail(atIndexPath indexPath: NSIndexPath, cellTag: Int, complete: UIImageOptionalVoid) {
+        return imagesCommands.thumbnail(atIndexPath: indexPath, request: cellTag, complete: { (image) in
+            dispatch_async(dispatch_get_main_queue(), { 
+                complete(image: image)
+            })
+        })
     }
     
     func collectionView(didSelectItemAtIndexPath indexPath: NSIndexPath) {
