@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Model.sharedInstance.factory = ModelFactory()
+        let arguments = NSProcessInfo.processInfo().arguments
+        if arguments.contains("-test") {
+            Model.sharedInstance.factory = ModelFactoryMock()
+        } else {
+            Model.sharedInstance.factory = ModelFactory()
+        }
         return true
     }
 

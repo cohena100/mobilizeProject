@@ -15,6 +15,12 @@
 		040D54CF1D4B56D6001250F4 /* MobilizeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54CE1D4B56D6001250F4 /* MobilizeProjectUITests.swift */; };
 		040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D54DE1D4B6600001250F4 /* MainViewController.swift */; };
 		041BDFBB1D4C68DC004BBFB8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFBA1D4C68DC004BBFB8 /* Network.swift */; };
+		04336FB81D53568B0070A73D /* ModelFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04336FB71D53568B0070A73D /* ModelFactoryMock.swift */; };
+		04336FB91D53578F0070A73D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BDFBA1D4C68DC004BBFB8 /* Network.swift */; };
+		04336FBA1D5357980070A73D /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesModel.swift */; };
+		04336FBB1D53579D0070A73D /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C11D51D3340016D894 /* ImagesManager.swift */; };
+		04336FBC1D5357A60070A73D /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */; };
+		04336FBD1D5357B30070A73D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2E4761D533B15001ADBB0 /* UIImage+Extensions.swift */; };
 		04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F751D4B8DD4007E4A55 /* MainNavigationController.swift */; };
 		04340F781D4B8F52007E4A55 /* MainNavigationMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F771D4B8F52007E4A55 /* MainNavigationMediator.swift */; };
 		04340F7B1D4B90CC007E4A55 /* MainMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340F7A1D4B90CC007E4A55 /* MainMediator.swift */; };
@@ -75,6 +81,7 @@
 		040D54D01D4B56D6001250F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040D54DE1D4B6600001250F4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		041BDFBA1D4C68DC004BBFB8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		04336FB71D53568B0070A73D /* ModelFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFactoryMock.swift; sourceTree = "<group>"; };
 		04340F751D4B8DD4007E4A55 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		04340F771D4B8F52007E4A55 /* MainNavigationMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationMediator.swift; sourceTree = "<group>"; };
 		04340F7A1D4B90CC007E4A55 /* MainMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMediator.swift; sourceTree = "<group>"; };
@@ -163,6 +170,10 @@
 				04340F841D4BA987007E4A55 /* Controller */,
 				04340F791D4B8F6F007E4A55 /* View */,
 				040D54AE1D4B56D6001250F4 /* AppDelegate.swift */,
+				04340F861D4BA9C9007E4A55 /* Model.swift */,
+				04340F871D4BA9C9007E4A55 /* IModelFactory.swift */,
+				04340F881D4BA9C9007E4A55 /* ModelFactory.swift */,
+				04336FB71D53568B0070A73D /* ModelFactoryMock.swift */,
 				040D54B21D4B56D6001250F4 /* Main.storyboard */,
 				040D54B51D4B56D6001250F4 /* Assets.xcassets */,
 				040D54B71D4B56D6001250F4 /* LaunchScreen.storyboard */,
@@ -199,9 +210,6 @@
 				04340F801D4B9C70007E4A55 /* ImagesCollectionMediator.swift */,
 				04340F7E1D4B9B71007E4A55 /* ImagesCollectionViewController.swift */,
 				04340F821D4BA2E5007E4A55 /* ImageCollectionViewCell.swift */,
-				04340F861D4BA9C9007E4A55 /* Model.swift */,
-				04340F871D4BA9C9007E4A55 /* IModelFactory.swift */,
-				04340F881D4BA9C9007E4A55 /* ModelFactory.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 				045B93C21D51D3340016D894 /* ImagesManager.swift in Sources */,
 				04340F8A1D4BA9C9007E4A55 /* IModelFactory.swift in Sources */,
 				045B93C61D51E0500016D894 /* WeakObject.swift in Sources */,
+				04336FB81D53568B0070A73D /* ModelFactoryMock.swift in Sources */,
 				045B93BF1D51B2710016D894 /* TypeAliases.swift in Sources */,
 				040D54DF1D4B6600001250F4 /* MainViewController.swift in Sources */,
 				04340F7F1D4B9B71007E4A55 /* ImagesCollectionViewController.swift in Sources */,
@@ -561,8 +570,13 @@
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				045B93C71D51E0500016D894 /* WeakObject.swift in Sources */,
 				04D1D0241D5334030036F179 /* NetworkMock.swift in Sources */,
+				04336FBC1D5357A60070A73D /* ImageDownloadOperation.swift in Sources */,
+				04336FBD1D5357B30070A73D /* UIImage+Extensions.swift in Sources */,
+				04336FBA1D5357980070A73D /* ImagesModel.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
 				045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */,
+				04336FBB1D53579D0070A73D /* ImagesManager.swift in Sources */,
+				04336FB91D53578F0070A73D /* Network.swift in Sources */,
 				04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
