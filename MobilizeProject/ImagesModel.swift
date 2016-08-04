@@ -62,8 +62,7 @@ class ImagesModel {
         let imageItem = imageItems[indexPath.row]
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let imageData = NSData(contentsOfURL: imageItem.imageURL)!
-            let image = UIImage(data:imageData)!
+            let image = self.network.image(forURL: imageItem.imageURL)!
             dispatch_async(dispatch_get_main_queue()) {
                 complete(image: image)
             }
