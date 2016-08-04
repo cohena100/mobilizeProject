@@ -21,7 +21,7 @@ class ImagesManager {
         operationQueue.maxConcurrentOperationCount = 2
     }
     
-    func image(withRequest request: Int, url: NSURL, complete: UIImageOptionalVoid) {
+    func image(withRequest request: Int, url: String, complete: UIImageOptionalVoid) {
         let newOperation = ImageDownloadOperation(url: url, network: network, complete: complete)
         if let operation = requestOperations[request]?.object {
             operation.cancel()

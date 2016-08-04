@@ -10,12 +10,12 @@ import UIKit
 
 class ImageDownloadOperation: NSOperation {
     
-    let url: NSURL
+    let url: String
     let network: Network
     var complete: UIImageOptionalVoid!
     var state = (executing: false, finished: false)
     
-    init(url: NSURL, network: Network, complete: UIImageOptionalVoid) {
+    init(url: String, network: Network, complete: UIImageOptionalVoid) {
         self.url = url
         self.network = network
         self.complete = complete

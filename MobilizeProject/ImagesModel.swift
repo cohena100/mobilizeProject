@@ -34,7 +34,7 @@ class ImagesModel {
                 let item = jsonItem as! [String: String]
                 let imageThumb = item["imageThumb"]!
                 let original = item["original"]!
-                let newElement = ImageItem(imageURL: NSURL(string: original)!, thumbnailURL: NSURL(string: imageThumb)!, thumbnail: nil)
+                let newElement = ImageItem(imageURL: original, thumbnailURL: imageThumb, thumbnail: nil)
                 return newElement
             })
             complete()

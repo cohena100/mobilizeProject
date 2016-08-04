@@ -15,8 +15,8 @@ class Network {
 
 extension Network {
     
-    func image(forURL url: NSURL) -> UIImage? {
-        let imageData = NSData(contentsOfURL: url)
+    func image(forURL url: String) -> UIImage? {
+        let imageData = NSData(contentsOfURL: NSURL(string: url)!)
         guard let data = imageData else {
             return nil
         }
