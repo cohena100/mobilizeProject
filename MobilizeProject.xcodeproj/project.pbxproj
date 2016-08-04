@@ -35,6 +35,9 @@
 		0463D0821D4D157B006E1AE7 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463D0811D4D157B006E1AE7 /* ImagesModel.swift */; };
 		048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
 		048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B556C1D4C755D00D10A88 /* ImageItem.swift */; };
+		04A2E4771D533B15001ADBB0 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2E4761D533B15001ADBB0 /* UIImage+Extensions.swift */; };
+		04D1D0231D5334030036F179 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1D0221D5334030036F179 /* NetworkMock.swift */; };
+		04D1D0241D5334030036F179 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1D0221D5334030036F179 /* NetworkMock.swift */; };
 		41731A93CB87D5AC18A24D21 /* Pods_MobilizeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA79E5101C2F4732DD73277 /* Pods_MobilizeProject.framework */; };
 		576B9D4ED1090374DB1B51FE /* Pods_MobilizeProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F5C83FBC8A6ED1B3C2354 /* Pods_MobilizeProjectUITests.framework */; };
 		58559A29C07676E4E32FCED4 /* Pods_MobilizeProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FF9A9DB148636F935C2BB4 /* Pods_MobilizeProjectTests.framework */; };
@@ -88,6 +91,8 @@
 		045B93C81D51E2380016D894 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		0463D0811D4D157B006E1AE7 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		048B556C1D4C755D00D10A88 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		04A2E4761D533B15001ADBB0 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		04D1D0221D5334030036F179 /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		25FF9A9DB148636F935C2BB4 /* Pods_MobilizeProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilizeProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3327A76F18AD9D7FB9D3281B /* Pods-MobilizeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilizeProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilizeProjectTests/Pods-MobilizeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CA79E5101C2F4732DD73277 /* Pods_MobilizeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilizeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +157,7 @@
 		040D54AD1D4B56D6001250F4 /* MobilizeProject */ = {
 			isa = PBXGroup;
 			children = (
+				04A2E4751D533AF9001ADBB0 /* Extensions */,
 				045B93BD1D51B2540016D894 /* Common */,
 				04340F851D4BA98F007E4A55 /* Model */,
 				04340F841D4BA987007E4A55 /* Controller */,
@@ -216,6 +222,7 @@
 				048B556C1D4C755D00D10A88 /* ImageItem.swift */,
 				0463D0811D4D157B006E1AE7 /* ImagesModel.swift */,
 				041BDFBA1D4C68DC004BBFB8 /* Network.swift */,
+				04D1D0221D5334030036F179 /* NetworkMock.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,6 +234,14 @@
 				045B93C51D51E0500016D894 /* WeakObject.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		04A2E4751D533AF9001ADBB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04A2E4761D533B15001ADBB0 /* UIImage+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		3A677911457B9E9020589D31 /* Frameworks */ = {
@@ -518,7 +533,9 @@
 				04340F891D4BA9C9007E4A55 /* Model.swift in Sources */,
 				04340F761D4B8DD4007E4A55 /* MainNavigationController.swift in Sources */,
 				04340F811D4B9C70007E4A55 /* ImagesCollectionMediator.swift in Sources */,
+				04A2E4771D533B15001ADBB0 /* UIImage+Extensions.swift in Sources */,
 				045B93C91D51E2380016D894 /* ImageDownloadOperation.swift in Sources */,
+				04D1D0231D5334030036F179 /* NetworkMock.swift in Sources */,
 				04340F8B1D4BA9C9007E4A55 /* ModelFactory.swift in Sources */,
 				0463D0821D4D157B006E1AE7 /* ImagesModel.swift in Sources */,
 				048B556D1D4C755D00D10A88 /* ImageItem.swift in Sources */,
@@ -543,6 +560,7 @@
 			files = (
 				048B556E1D4C755D00D10A88 /* ImageItem.swift in Sources */,
 				045B93C71D51E0500016D894 /* WeakObject.swift in Sources */,
+				04D1D0241D5334030036F179 /* NetworkMock.swift in Sources */,
 				040D54C41D4B56D6001250F4 /* MobilizeProjectTests.swift in Sources */,
 				045B93C01D51B2710016D894 /* TypeAliases.swift in Sources */,
 				04340F8E1D4BAA40007E4A55 /* ImagesCommands.swift in Sources */,

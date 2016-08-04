@@ -49,17 +49,18 @@ class ImageDownloadOperation: NSOperation {
     }
     
     override func main() {
-        let image = network.image(forURL: self.url)!
-        if self.cancelled {
-            self.complete(image: nil)
-        } else {
-            self.complete(image: image)
+        network.image(forURL: self.url) { (image) in
+            if self.cancelled {
+                self.complete(image: nil)
+            } else {
+                self.complete(image: image)
+            }
+            self.willChangeValueForKey("finished")
+            self.willChangeValueForKey("executing")
+            self.state = (executing: false, finished: true)
+            self.didChangeValueForKey("executing")
+            self.didChangeValueForKey("finished")
         }
-        self.willChangeValueForKey("finished")
-        self.willChangeValueForKey("executing")
-        self.state = (executing: false, finished: true)
-        self.didChangeValueForKey("executing")
-        self.didChangeValueForKey("finished")
     }
     
 }

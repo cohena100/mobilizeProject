@@ -11,16 +11,17 @@ import Alamofire
 
 class Network {
     
-}
-
-extension Network {
+    init() {
+        
+    }
     
-    func image(forURL url: String) -> UIImage? {
+    func image(forURL url: String, complete: UIImageOptionalVoid) -> () {
         let imageData = NSData(contentsOfURL: NSURL(string: url)!)
         guard let data = imageData else {
-            return nil
+            complete(image: nil)
+            return
         }
-        return UIImage(data:data)
+        complete(image: UIImage(data:data))
     }
     
     func get(url: String, success: (json: AnyObject) -> (), failure: (error: NSError) -> ()) {
@@ -36,3 +37,4 @@ extension Network {
     }
     
 }
+
