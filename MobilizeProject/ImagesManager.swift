@@ -18,7 +18,6 @@ class ImagesManager {
         self.network = network
         operationQueue.name = "Image Loader"
         operationQueue.qualityOfService = .Background
-        operationQueue.maxConcurrentOperationCount = 2
     }
     
     func image(withRequest request: Int, url: String, complete: UIImageOptionalVoid) {
