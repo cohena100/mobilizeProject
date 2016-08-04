@@ -20,7 +20,7 @@ class ImagesCommands  {
         self.imagesModel = imagesModel
     }
     
-    func setup(complete: () -> ()) {
+    func setup(complete: VoidVoid) {
         imagesModel.setup {
             complete()
         }
@@ -30,7 +30,7 @@ class ImagesCommands  {
         return imagesModel.thumbnail(atIndexPath: indexPath, request: request, complete: complete)
     }
     
-    func image(atIndexPath indexPath: NSIndexPath, complete: (image: UIImage) -> ()) {
+    func image(atIndexPath indexPath: NSIndexPath, complete: UIImageVoid) {
         return imagesModel.image(atIndexPath: indexPath, complete: complete)
     }
     

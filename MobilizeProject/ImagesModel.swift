@@ -22,7 +22,7 @@ class ImagesModel {
         self.thumbnailsManager = ImagesManager(network: self.network)
     }
     
-    func setup(complete: () -> ()) {
+    func setup(complete: VoidVoid) {
         if imageItemsCount > 0 {
             complete()
             return

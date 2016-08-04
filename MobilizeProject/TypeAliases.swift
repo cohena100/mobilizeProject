@@ -10,3 +10,4 @@ import UIKit
 
 typealias UIImageOptionalVoid = (image: UIImage?) -> ()
 typealias UIImageVoid = (image: UIImage) -> ()
+typealias VoidVoid = () -> ()
