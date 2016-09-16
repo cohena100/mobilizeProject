@@ -5,7 +5,8 @@ target 'MobilizeProject' do
 
   # Pods for MobilizeProject
   pod 'Alamofire'
-  
+  pod 'ReactiveCocoa'
+
   target 'MobilizeProjectTests' do
     inherit! :search_paths
     # Pods for testing
